@@ -2,39 +2,54 @@
 <html lang="en">
     <head>
         <title>Email sending form</title>
+        <link rel="icon" href="https://profile.intra.42.fr/assets/42_logo-7dfc9110a5319a308863b96bda33cea995046d1731cebb735e41b16255106c12.svg">
         <style>
             body {font-size: large; font-weight:600;}
+
         </style>
         <script src="popup.js"></script>
     </head>
     <body>
         <form>
             <label for="firstname">Firstname :</label>
-            <input type="text" id="firstname"><br>
+            <input type="text" id="firstname" value="Slim"><br>
+
             <label for="name">Name :</label>
-            <input type="text" id="name"><br>
+            <input type="text" id="name" value="Shady"><br>
+
             <label for="age">Age :</label>
-            <input type="number" id="age" min="0" max="130"><br>
+            <input type="number" id="age" min="0" max="130" value="30"><br>
+
             <label for="phone">Phone :</label>
-            <input type="tel" id="phone"><br>
+            <input type="tel" id="phone" value="+43676666666"><br>
+
             <label for="email">Email :</label>
-            <input type="email" id="email"><br>
+            <input type="email" id="email" value="emimen@gmx.at"><br>
+
             <label for="student">Student at 42 ? :</label>
             <input type="checkbox" id="student"><br>
+
             <label for="gender_male">Male</label>
-            <input type="radio" id="gender_male" name="gender">
+            <input type="radio" id="gender_male" name="gender" value="Male">
+
             <label for="gender_female">Female</label>
-            <input type="radio" id="gender_female" name="gender">
+            <input type="radio" id="gender_female" name="gender" value="Female">
+
             <label for="gender_female">Other</label>
-            <input type="radio" id="gender_other" name="gender"><br>
-            <input type="button" value="Run that sexy Javascript" onclick="myAlert()">
+            <input type="radio" id="gender_other" name="gender" value="Other"><br>
+
+            <input type="submit" value="Run that sexy Javascript!" onclick="displayFormContents(); return false;">
         </form>
-        <script>
-            function myAlert(){
-                const alertBox = document.createElement('div');
-                alertBox.className = "This page says";
-                document.body.appendChild(alertBox)
-            }
-        </script>
+        <div class="popup-overlay" id="popupOverlay"></div>
+        <div class="popup-content" id="popupContent"></div>
+    </div>
+
+    <script>
+        window.alert = function(message) {
+            console.log(message)
+            document.getElementById('popupContent').textContent = message;
+            console.log(document.getElementById('popupContent').textContent)
+        };
+    </script>
     </body>
 </html>
