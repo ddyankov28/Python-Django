@@ -4,6 +4,7 @@ def print_numbers():
     for item in numbers:
         print(item)
 
+
 if __name__ == '__main__':
     try:
         print_numbers()

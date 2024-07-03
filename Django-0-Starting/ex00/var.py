@@ -12,6 +12,7 @@ def my_var():
     for item in list_of_vars:
         print(f"{item} has a type {type(item)}")
 
+
 if __name__ == '__main__':
     try:
         my_var()
