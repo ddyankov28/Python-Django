@@ -3,18 +3,22 @@
 # This is the bitly shortened github location of this exercise
 # https://bit.ly/3S3Swgv
 
+# Checks if exactly 1 argument
 if [ "$#" -ne 1 ]
 then
     echo "Error: Use 1 argument (the bit.ly shortened version)"
     exit 1
 fi
 
+# Checks if the argument is empty or not provided
 if [ -z "$1" ]
 then
     echo "Error: The argument is empty or not provided"
     exit 1
 fi
 
+# Gets the line where the status code is and cuts only the 2nd
+# field where the code is placed
 curl --silent --head "$1" | grep "HTTP" > status_code.txt
 status_code=$(cut -d " " -f 2 status_code.txt)
 
