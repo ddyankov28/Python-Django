@@ -1,14 +1,4 @@
-import sys
 
-
-def periodic_table():
-    print("This is the table")
-    file = open('periodic_table.txt', 'r')
-    elements = file.read().split('\n')
-    print(elements[0])
-
-
-    html_content = """
     <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -30,21 +20,4 @@ def periodic_table():
             </table>
         <body>
     </html>
-    """
-    html_file = open("periodic_table.html", 'w')
-    html_file.write(html_content)
-
-    css_content="""
-    td {
-        border: 3px solid;
-    }
-    """
-    css_file = open("style.css", 'w')
-    css_file.write(css_content)
     
-    
-if __name__ == '__main__':
-    try:
-        periodic_table()
-    except Exception as e:
-        print("Error: ", e)
