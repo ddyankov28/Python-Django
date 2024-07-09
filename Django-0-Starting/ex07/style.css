@@ -1,5 +1,17 @@
 
+    table {
+        border-collapse: collapse;
+    }
     td {
         border: 3px solid;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0
     }
     
