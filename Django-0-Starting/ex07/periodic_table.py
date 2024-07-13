@@ -26,14 +26,14 @@ def periodic_table():
                 current_position += 1
                 
             table_rows += f"""
-            <td>
-                <h4>{name}</h4>
-                <ul>
-                    <li>No {atomic_number}</li>
-                    <li>{symbol}</li>
-                    <li>{atomic_mass}</li>
-                </ul>
-            </td>
+                    <td style=\"background-color: #dfff80;\">
+                        <h4>{name}</h4>
+                        <ul>
+                            <li>No {atomic_number}</li>
+                            <li>{symbol}</li>
+                            <li>{atomic_mass}</li>
+                        </ul>
+                    </td>
             """
         current_position = position + 1
     
@@ -50,7 +50,7 @@ def periodic_table():
             <table>
                 {table_rows}
             </table>
-        <body>
+        </body>
     </html>
     """
     html_file = open("periodic_table.html", 'w')
