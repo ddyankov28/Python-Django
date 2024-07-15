@@ -15,3 +15,8 @@
 
 ## 👨‍🌾 `Django-0-Starting` 👨‍🌾
 -   Python Data Types
+-   Converting different data types to dictionaries
+-   Search by `Key` in a dictionary
+-   Search by `Value` in a dictionary
+-   Dictionary sorting
+-   Creating html and css from python scripts (Created the periodic_table from data text file)

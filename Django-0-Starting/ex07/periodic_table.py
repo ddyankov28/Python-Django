@@ -17,14 +17,16 @@ def periodic_table():
             atomic_mass = components[3].split(':')[1].strip()
             print(f"Position: {position}")
             print(f"Current position: {current_position}")
-        
+
+            # we should move on a new row
             if position == 0 and current_position != 0:
                 table_rows += "</tr><tr>"
             
+            # until reaching the position crating empty cells
             while current_position < position:
                 table_rows += "<td></td>"
                 current_position += 1
-                
+            
             table_rows += f"""
                     <td style=\"background-color: #dfff80;\">
                         <h4>{name}</h4>
