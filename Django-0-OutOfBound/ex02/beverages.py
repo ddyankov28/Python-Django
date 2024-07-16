@@ -1,9 +1,7 @@
 class HotBeverage:
-    def __init__(self, price=0.30, name="hot beverage"):
-        self.price = price
-        self.name = name
+    price = 0.3
+    name = "hot beverage"
 
-    
     def description(self):
         return "Just some hot water in a cup"
     
@@ -14,16 +12,48 @@ class HotBeverage:
 
 
 class Coffee(HotBeverage):
+    price = 0.4
+    name = "coffee"
+    
     def description(self):
-        return "A coffee, to stay awake."
+        return "A coffee, to stay awake"
 
 
 class Tea(HotBeverage):
-    def description(self):
-        return super().description()
+    name = "tea"
+    
 
-hb = HotBeverage()
-print(hb)
-print("------------")
-coffee = Coffee(0.4, "coffee")
-print(coffee)
+class Chocolate(HotBeverage):
+    price = 0.5
+    name = "chocolate"
+    
+    def description(self):
+        return "Chocolate, sweet chocolate..."
+    
+
+class Cappuccino(HotBeverage):
+    price = 0.45
+    name = "cappuccino"
+    
+    def description(self):
+        return "Un po' di Italia nella sua tazza!"
+
+if __name__ == '__main__':
+    try:
+        hb = HotBeverage()
+        print(hb)
+        print("------------")
+        coffee = Coffee()
+        print(coffee)
+        print("------------")
+        tea = Tea()
+        print(tea)
+        print("------------")
+        chocolate = Chocolate()
+        print(chocolate)
+        print("------------")
+        cappuccino = Cappuccino()
+        print(cappuccino)
+        print("------------")
+    except Exception as e:
+        print("Error: ", e)
