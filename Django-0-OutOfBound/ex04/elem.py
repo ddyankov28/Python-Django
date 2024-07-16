@@ -27,7 +27,10 @@ class Elem:
 
         Obviously.
         """
-        [...]
+        self.tag = tag
+        self.attr = attr
+        self.content = content
+        self.tag_type = tag_type
 
     def __str__(self):
         """
@@ -37,9 +40,11 @@ class Elem:
         elements...).
         """
         if self.tag_type == 'double':
-            [...]
+            result = ""
+            result += f"<{self.tag}></{self.tag}>"
         elif self.tag_type == 'simple':
-            [...]
+            result = """"""
+            result += f"""<{self.tag}"""
         return result
 
     def __make_attr(self):
@@ -84,4 +89,8 @@ class Elem:
 
 
 if __name__ == '__main__':
-    page = Elem('html', )
+    page = Elem('html', content=[
+                Elem('head', content=Elem('title', content=Text('"Hello ground!"'))),
+                Elem('body', content=[Elem('h1', content=Text('"Oh no, not again!"')),
+                Elem('img', {'src': 'http://i.imgur.com/pfp3T.jpg'}, tag_type='simple')])])
+    print(page)
