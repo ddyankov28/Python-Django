@@ -84,4 +84,4 @@ class Elem:
 
 
 if __name__ == '__main__':
-    [...]
+    page = Elem('html', )
