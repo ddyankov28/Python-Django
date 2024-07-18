@@ -52,7 +52,7 @@ class Elem:
         if self.tag_type == 'double':
             result = f"<{self.tag}{self.__make_attr()}>{self.__make_content()}</{self.tag}>"
         elif self.tag_type == 'simple':
-            result = f"<{self.tag}{self.__make_attr} />"
+            result = f"<{self.tag}{self.__make_attr()} />"
         return result
 
     def __make_attr(self):
@@ -101,7 +101,12 @@ class Elem:
 
 if __name__ == '__main__':
     try:
-        elem = Elem(content='')
-        raise(Exception("incorrect behaviour."))
+        html_page = Elem("html", content=[
+                        Elem("head", content=[
+                            Elem("title", content=Text('"Hello ground!"'))]),
+                        Elem("body", content=[
+                            Elem("h1", content=Text('"Oh no, not again!"')),
+                            Elem("img", {"src": "http://i.imgur.com/pfp3T.jpg"}, tag_type="simple")])])
+        print(html_page)
     except Exception as e:
-        assert isinstance(e, Elem.ValidationError)
+        print("Error : ", e)
