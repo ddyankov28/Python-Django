@@ -21,6 +21,6 @@
 -   Dictionary sorting
 -   Creating html and css from python scripts (Created the periodic_table from data text file)
 
-## `Django-0-Starting`
+## `Django-0-OutOfBound`
 -   Python Classes and Inheritance
 -   Creating Python Class HTML Elements
