@@ -12,10 +12,7 @@ class Text(str):
         """
         Do you really need a comment to understand this method?..
         """
-        replace_char_dict = {"<": "&lt", ">": "&rt", '"': "&quot", "\n": '\n<br />\n'}
-        for key, value in replace_char_dict.items():
-            text = super().__str__().replace(key, value)
-        return text
+        return super().__str__().replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("\n", "\n<br />\n")
 
 
 class Elem:
@@ -35,9 +32,11 @@ class Elem:
         self.tag = tag
         self.attr = attr
         self.content = []
+        if not (self.check_type(content) or content is None):
+            raise self.ValidationError("Wrong Content")
         if type(content) == list:
             self.content = content
-        elif content is not None:
+        elif content:
                 self.content.append(content)
         self.tag_type = tag_type
         if tag_type != "double" and tag_type != "simple":
@@ -69,14 +68,15 @@ class Elem:
         """
         Here is a method to render the content, including embedded elements.
         """
-        
         if len(self.content) == 0:
             return ''
         result = '\n'
         for elem in self.content:
             if (len(str(elem))):
                 result += f"{elem}\n"
-        result = " ".join(line for line in result.splitlines(True))
+        result = "  ".join(line for line in result.splitlines(True))
+        if result.isspace():
+            return ''
         return result
 
     def add_content(self, content):
@@ -101,11 +101,7 @@ class Elem:
 
 if __name__ == '__main__':
     try:
-        html_page = Elem("html", {"lang": "en"}, content=[
-                        Elem("head", content=[
-                            Elem("title", content="\"Hello ground!\"")
-                        ])
-        ])
-        print(html_page)
+        elem = Elem(content='')
+        raise(Exception("incorrect behaviour."))
     except Exception as e:
-        print("Error: ", e)
+        assert isinstance(e, Elem.ValidationError)
