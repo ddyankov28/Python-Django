@@ -9,15 +9,18 @@ if [[ "$VIRTUAL_ENV" != "" ]]; then
 fi
 
 touch my_program.py
-MY_PROGRAM_CONTENT='''#!/usr/bin/env python3
 
+cat << EOF > my_program.py
+#!/usr/bin/env python3
+from path import Path
 
-def main():
-    print("Hello, World!")
+new_folder = Path('new_folder_from_path')
+new_folder.makedirs_p()
+file = open('new_folder_from_path/new_file', 'w')
+file.write("This is the file content")
+file.close()
+file = open('new_folder_from_path/new_file', 'r')
+print(file.read())
+EOF
 
-
-if __name__ == "__main__":
-    main()
-'''
-
-echo $MY_PROGRAM_CONTENT > my_program.py
+python3 my_program.py
