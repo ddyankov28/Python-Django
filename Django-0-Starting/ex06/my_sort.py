@@ -27,7 +27,7 @@ def sort_dict():
             singers_dict[year] += f" {name}"
         else:
             singers_dict[year] = name
-    # for y, n in singers_dict.items():
+    #for y, n in singers_dict.items():
     #     print(f"{y} : {n}")
     sorted_by_year_singers_dict = {}
     for year in sorted(singers_dict):
@@ -37,6 +37,7 @@ def sort_dict():
     for name in sorted_by_year_singers_dict.values():
         list_name = name.split()
         list_name.sort()
+        #print(name)
         name = ' '.join(list_name)
         print(name)
 
