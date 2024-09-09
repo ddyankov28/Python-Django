@@ -1,3 +1,2 @@
-<h1>This is {name}'s Resume</h1><br><br>
-<h2>Hello guys, My name is {name} and I am {age} years old<br>
-    I am a {proffesion} who lives in {city} and I love {hobby}.</h2>
+<h1>This is {name}'s Resume</h1>
+        <h2>My name is {name} {surname} and I am {age} years old. I am a {proffesion} who lives in {city} and loves {hobby}.</h2>
