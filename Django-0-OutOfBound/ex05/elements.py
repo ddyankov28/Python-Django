@@ -147,6 +147,7 @@ if __name__ == "__main__":
                             ])
                        )
         html_file.write(html_content.__str__())
+        html_file.close()
         
         example_html = Html([Head(Text('"Hello ground!"')),
                              Body([H1(Text('"Oh no, not again!"')),

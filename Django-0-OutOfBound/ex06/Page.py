@@ -5,10 +5,10 @@ from elements import *
 class Page():
     def __init__(self, element_class):
         assert isinstance(element_class, Elem)
-        self.substr = element_class.__str__()
+        self.str = element_class.__str__()
     
     def __str__(self):
-        return self.substr
+        return self.str
     
     
     def is_valid(self):
@@ -19,5 +19,9 @@ if __name__ == "__main__":
     try:
         page = Page(Html( [Head(), Body()] ))
         print(page)
+        if page.is_valid():
+            print("The Page is valid")
+        else:
+            print("The Page is not valid")
     except Exception as e:
         print("Error: ", e)
