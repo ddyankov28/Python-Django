@@ -24,3 +24,7 @@
 ## `Django-0-OutOfBound`
 -   Python Classes and Inheritance
 -   Creating Python Class HTML Elements
+
+## `Django-1-Libraries`
+-   What is Geohashing and Antigravity lib (a big joke)
+-   How to install local libs via bash script
