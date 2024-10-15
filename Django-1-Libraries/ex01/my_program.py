@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from path import Path
+from local_lib.path import Path
 
 new_folder = Path('new_folder')
 new_folder.makedirs_p()

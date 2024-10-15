@@ -1,18 +1,23 @@
 #!/bin/bash
 
-echo "Pip version is: " $(pip3 --version)
-python3 -m venv local_lib
-source local_lib/bin/activate
+echo -e "Pip version is:\n"$(pip3 --version)"\n"
 
-if [[ "$VIRTUAL_ENV" != "" ]]; then
-    pip install --force-reinstall git+https://github.com/jaraco/path.git > path_install.log
+if [ ! -d "path" ]; then
+    git clone https://github.com/jaraco/path.git
+else
+    echo -e "Directory 'path' already exists!\n"
 fi
-
+if [ -d "local_lib" ]; then
+    echo -e "Overwriting and re-installing the library\n" 
+    rm -rf local_lib
+fi
+mkdir local_lib
+pip install path --target=local_lib > path_install.log
 touch my_program.py
 
 cat << EOF > my_program.py
 #!/usr/bin/env python3
-from path import Path
+from local_lib.path import Path
 
 new_folder = Path('new_folder')
 new_folder.makedirs_p()
