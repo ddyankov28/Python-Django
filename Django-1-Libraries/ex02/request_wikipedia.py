@@ -1,30 +1,28 @@
 import requests
 import sys
+import dewiki
 
 
 def main():
     # English Wikipedia API
     url = "https://en.wikipedia.org/w/api.php"
-    # define parameters for the search
-    try:
-        assert len(sys.argv) >= 2, "Parameter Absence"
-        assert sys.argv[1].strip(), "Wrong/Empty Parameter"
-        
-        params = {
-            # the action of the API (what to do)
-            'action': 'opensearch',
-            # what we search
-            'search': sys.argv[1],
-            'limit' : 1
-        }
-        response = requests.get(url, params=params)
-        assert response, f"{response.raise_for_status()}"
-        data = response.json()
-        assert data[1], "Information not found"
-        print(data)
-    except Exception as e:
-        print("Error: ", e)
-
+    assert len(sys.argv) == 2, "Usage: python3 request_wikipedia.py <search_term>"
+    assert sys.argv[1].strip(), "Wrong/Empty Parameter"
+    search_term = sys.argv[1]
+    params = {
+        'action'     : 'parse',
+        'page'       : search_term,
+        'format'     : 'json',
+        'redirects'  : True,
+    }
+    response = requests.get(url, params=params)
+    print(response.url)
+    assert response, f"{response.raise_for_status()}"
+    data = response.json()
+    #print(data)
+    page_text = data.get('parse').get('text').get('*')
+    print(page_text
+          )
 
 if __name__ == "__main__":
     try:
