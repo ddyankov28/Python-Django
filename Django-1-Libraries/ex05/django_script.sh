@@ -12,4 +12,3 @@ cd djangoproject
 python3 manage.py migrate
 echo -e "✅ ${GREEN}Django Running The Server${RESET}✅"
 gnome-terminal -- bash -c 'python3 manage.py runserver; exec bash'
-
