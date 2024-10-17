@@ -33,3 +33,6 @@
 -   Using BeautifulSoup to scrape info from web pages
 -   Creating Python Virtual Environments
 -   Initiating Basic Django Apps 
+
+## `Django-1-BaseDjango`
+-   Using templates and include html in Django
