@@ -31,3 +31,5 @@
 -   API (Wikipedia API), JSON, Wiki Markup
 -   Requests Module
 -   Using BeautifulSoup to scrape info from web pages
+-   Creating Python Virtual Environments
+-   Initiating Basic Django Apps 
