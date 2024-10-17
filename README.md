@@ -28,3 +28,6 @@
 ## `Django-1-Libraries`
 -   What is Geohashing and Antigravity lib (a big joke)
 -   How to install local libs via bash script
+-   API (Wikipedia API), JSON, Wiki Markup
+-   Requests Module
+-   Using BeautifulSoup to scrape info from web pages
