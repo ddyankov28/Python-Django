@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01: Display process of a static page.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            background: #ffffff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            color: #35424a;
+        }
+        p {
+            margin: 10px 0;
+        }
+        pre {
+            background: #e8e8e8;
+            padding: 10px;
+            border-left: 5px solid #35424a;
+            overflow: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>How Django Serves Static Pages</h1>
+</header>
+
+<section>
+    <h2>1. User Request</h2>
+    <p>The process begins when a user navigates to a specific URL in their web browser, sending an HTTP request to the server hosting the Django application.</p>
+</section>
+
+<section>
+    <h2>2. URL Routing</h2>
+    <p>Django's URL dispatcher routes the incoming request to the appropriate view based on the URL pattern defined in <code>urls.py</code>.</p>
+</section>
+
+<section>
+    <h2>3. View Function</h2>
+    <p>Once a matching URL pattern is found, Django calls the associated view function, which processes the request.</p>
+    <pre><code>from django.shortcuts import render
+
+def my_view(request):
+    return render(request, 'my_template.html')</code></pre>
+</section>
+
+<section>
+    <h2>4. Template Rendering</h2>
+    <p>The view function uses Django's template system to render an HTML page. The <code>render</code> function takes the HTTP request, template name, and context data.</p>
+</section>
+
+<section>
+    <h2>5. Template Files</h2>
+    <p>The specified template file (<code>my_template.html</code>) contains the HTML code. This file can include Django template language for dynamic content insertion.</p>
+    <pre><code>&lt;!-- In my_template.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;{{ title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to my static page!&lt;/h1&gt;
+    &lt;p&gt;This is a simple static web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+
+<section>
+    <h2>6. Rendering Process</h2>
+    <p>Django processes the template, replacing any template tags and variables with their corresponding values from the context, resulting in a fully rendered HTML string.</p>
+</section>
+
+<section>
+    <h2>7. HTTP Response</h2>
+    <p>The view returns an HTTP response object containing the rendered HTML, which is sent back to the user's web browser.</p>
+    <pre><code>from django.http import HttpResponse
+
+def my_view(request):
+    return HttpResponse('&lt;h1&gt;This is a static page&lt;/h1&gt;')</code></pre>
+</section>
+
+<section>
+    <h2>8. Displaying in the Browser</h2>
+    <p>The user's browser receives the HTTP response and renders the HTML content, displaying the static web page to the user.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Django Static Page Guide</p>
+</footer>
+
+</body>
+</html>

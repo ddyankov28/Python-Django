@@ -4,6 +4,11 @@ from django.template import loader
 
 # Create your views here.
 
-def ex01(request):
+def django_framework(request):
     template = loader.get_template('django.html')
+    return HttpResponse(template.render())
+
+
+def static_page(request):
+    template = loader.get_template('display.html')
     return HttpResponse(template.render())
