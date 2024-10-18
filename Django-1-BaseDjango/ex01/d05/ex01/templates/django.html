@@ -1,6 +1,55 @@
 {% extends "base.html" %}
-{% block title %}Ex01: Django, framework web.{% endblock %}
+{% block title %}Ex01: Django, framework web.{% endblock title %}
 
 {% block content %}
-    <h1>DJANGO PAGE</h2>
-{% endblock %}
+<header>
+    <h1>Welcome to Django: A Powerful Web Framework</h1>
+    <p>Django is a robust, open-source web framework that simplifies the development of complex, database-driven websites. Built by experienced developers, Django helps make web development faster and more efficient, allowing you to focus on building features for your project instead of reinventing the wheel.</p>
+</header>
+
+<section>
+    <h2>What is Django?</h2>
+    <p>Django is a Python-based web framework that promotes rapid development and clean, pragmatic design. It takes care of many of the repetitive tasks required to build a website, letting developers focus on writing code that matters. Django is often described as the "framework for perfectionists with deadlines" because of its ability to handle complex, data-heavy applications while being developer-friendly and fast.</p>
+    <p>At its core, Django is known for its simplicity and the "Don't Repeat Yourself" (DRY) philosophy. With Django, you can build secure, scalable, and maintainable websites without having to manage the low-level details that most frameworks demand.</p>
+</section>
+
+<section>
+    <h2>A Brief History of Django</h2>
+    <p>Django was born in 2003 at the Lawrence Journal-World newspaper in Kansas, USA. The developers, Adrian Holovaty and Simon Willison, needed a tool that could quickly and efficiently manage the high-volume, news-driven websites they were building. Over time, they refined Django into a general-purpose framework capable of managing not just news sites but a wide range of web applications.</p>
+    <p>In 2005, Django was released to the public as open-source software. This marked a turning point in web development for the Python community. The framework gained popularity quickly for its ability to simplify web development while offering advanced tools out of the box. In 2008, the Django Software Foundation (DSF) was formed to support and oversee the continued development of Django, ensuring it remained free and open for all.</p>
+</section>
+
+<section>
+    <h2>Key Features of Django</h2>
+    <ul>
+        <li><strong>Automatic Admin Interface:</strong> Django’s built-in admin interface allows developers to manage site content easily without writing any additional code. This feature is highly customizable and can be extended for more complex administrative tasks.</li>
+        <li><strong>Object-Relational Mapper (ORM):</strong> The ORM allows developers to work with databases using Python code instead of SQL. It supports most major databases, including PostgreSQL, MySQL, SQLite, and Oracle.</li>
+        <li><strong>Security:</strong> Django takes security seriously, helping developers avoid common security issues such as cross-site scripting, cross-site request forgery, and SQL injection. It comes with secure default settings and tools for managing user authentication and permissions.</li>
+        <li><strong>Scalability:</strong> Django is designed to scale. It powers some of the busiest websites on the Internet, such as Instagram, Pinterest, and Mozilla. The framework is capable of handling both small and large-scale projects efficiently.</li>
+        <li><strong>URL Routing:</strong> Django offers a clean and elegant URL dispatcher that lets you map URLs to specific views in a highly flexible and customizable way.</li>
+        <li><strong>Templating Engine:</strong> Django's templating system allows for the separation of design and business logic. This enables developers to define how HTML should be dynamically generated while keeping the logic isolated in views.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Why Use Django?</h2>
+    <p>Django offers a wide range of benefits that make it a go-to choice for developers:</p>
+    <ul>
+        <li><strong>Rapid Development:</strong> With Django, developers can create a functional application quickly thanks to its out-of-the-box features and reusable components.</li>
+        <li><strong>Versatility:</strong> Whether you're building a simple blog or a high-performance e-commerce platform, Django is versatile enough to handle the project. It has been used in various industries, including education, healthcare, and social media.</li>
+        <li><strong>Large Community and Support:</strong> Django has a large and active community that continuously contributes to its growth. There are extensive resources available, including documentation, tutorials, and third-party libraries, making it easy to learn and use.</li>
+        <li><strong>Fully Loaded:</strong> Django includes a wide range of features by default, like user authentication, session management, and an integrated ORM. You don’t have to look elsewhere for common tools; they come built-in.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Django in Modern Web Development</h2>
+    <p>Today, Django is a vital tool in the modern web development landscape. It is trusted by companies such as Instagram, Dropbox, and Spotify for its ability to scale while maintaining performance. Django continues to evolve with each release, incorporating new technologies, improving its performance, and staying relevant to the demands of contemporary web development.</p>
+    <p>The rise of APIs and frontend frameworks like React and Vue.js has also been well-supported by Django. With Django REST Framework (DRF), developers can build robust APIs, enabling Django to serve as a backend powerhouse for modern, dynamic frontend applications.</p>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>Django's enduring popularity comes from its focus on helping developers write clean, manageable, and scalable web applications quickly. Whether you're new to web development or an experienced developer looking for a robust and well-supported framework, Django provides the tools and resources you need to succeed in your projects.</p>
+</section>
+{% endblock content %}

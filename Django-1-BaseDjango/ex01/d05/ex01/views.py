@@ -12,3 +12,8 @@ def django_framework(request):
 def static_page(request):
     template = loader.get_template('display.html')
     return HttpResponse(template.render())
+
+
+def templates_page(request):
+    template = loader.get_template('templates.html')
+    return HttpResponse(template.render())
