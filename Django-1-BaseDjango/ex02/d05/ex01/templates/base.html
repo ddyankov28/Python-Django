@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Base Title{% endblock title %}</title>
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    {% endblock style %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <content>{% block content %}Base Content{% endblock content %}</content>
+    <footer>
+        <p>&copy; 2024 Django Piscine, 42 Vienna</p>
+    </footer>
+  </body>
+</html>

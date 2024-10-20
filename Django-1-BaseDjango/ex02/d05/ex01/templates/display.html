@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Ex01: Display process of a static page.{% endblock title %}
+
+{% block content %}
+<header>
+    <h1>Understanding the Process of Displaying a Static Web Page in Django</h1>
+    <p>In this guide, we'll walk through the entire process of how Django handles the display of a static web page using a simple template. This process begins when a request is made and ends with the rendered page being sent back to the user’s browser.</p>
+</header>
+
+<section>
+    <h2>Step 1: The Request</h2>
+    <p>When a user navigates to a Django-based website, a request is made to the web server. This request contains information such as the URL the user is trying to access, the HTTP method (GET or POST), and other request data like cookies or headers.</p>
+    <p>Example: A user types <em>www.example.com/home/</em> into their browser. This triggers an HTTP GET request to Django’s URL dispatcher.</p>
+</section>
+
+<section>
+    <h2>Step 2: URL Configuration</h2>
+    <p>Django uses a URL dispatcher (defined in the <code>urls.py</code>) to match the incoming request URL to a view. This is done using regular expressions or simple path matching. If a match is found, Django calls the corresponding view function.</p>
+    <pre><code>
+# urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+path('home/', views.home_view, name='home'),  # Matches the URL '/home/'
+]
+    </code></pre>
+    <p>Here, Django matches the <code>/home/</code> URL to the <code>home_view</code> function in the <code>views.py</code> file.</p>
+</section>
+
+<section>
+    <h2>Step 3: The View</h2>
+    <p>The view is where the logic for handling the request resides. In a basic case for a static page, the view simply prepares the context (if needed) and renders the HTML template. Django’s views can be functions or class-based, but for simplicity, we'll use a function-based view.</p>
+    <pre><code>
+# views.py
+from django.shortcuts import render
+
+def home_view(request):
+return render(request, 'home.html')  # Render the template 'home.html'
+    </code></pre>
+    <p>In this view, Django loads the template file <code>home.html</code> from the templates directory and returns an HTTP response containing the rendered HTML.</p>
+</section>
+
+<section>
+    <h2>Step 4: The Template</h2>
+    <p>The template contains the HTML structure that will be displayed to the user. Django’s templating engine allows for dynamic content insertion using variables and template tags, but for static pages, the template mostly contains plain HTML.</p>
+    <pre><code>
+<!-- home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+</head>
+<body>
+<h1>Welcome to the Home Page</h1>
+<p>This is a static page served by Django from a template.</p>
+</body>
+</html>
+    </code></pre>
+    <p>The template in this case is a simple HTML file that will be rendered as-is for the static content.</p>
+</section>
+
+<section>
+    <h2>Step 5: Rendering the Response</h2>
+    <p>Once the template is rendered by the Django view, an HTTP response is generated and returned to the user. The browser then processes this response and displays the rendered HTML as a web page.</p>
+    <p>In more complex cases, the view could include logic to insert data into the template, such as user information, dynamic content, or API results.</p>
+</section>
+
+<section>
+    <h2>Summary of the Request-to-Response Process</h2>
+    <ul>
+        <li><strong>Request:</strong> User sends a request to the server.</li>
+        <li><strong>URL Dispatcher:</strong> Django matches the request URL to a view.</li>
+        <li><strong>View:</strong> The view function prepares and renders the template.</li>
+        <li><strong>Template:</strong> The HTML template is rendered and returned as part of the HTTP response.</li>
+        <li><strong>Response:</strong> The rendered page is sent to the browser and displayed to the user.</li>
+    </ul>
+</section>
+{% endblock content %}
