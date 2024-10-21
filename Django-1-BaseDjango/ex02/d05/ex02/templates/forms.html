@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input History</title>
+</head>
+<body>
+    <h1>Input History Form</h1>
+
+    <!-- Display the form -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display the input history -->
+    <h2>Input History</h2>
+    <ul>
+        {% for entry in history %}
+            <li>{{ entry }}</li>
+        {% empty %}
+            <li>No input history yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
