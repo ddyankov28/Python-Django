@@ -1,0 +1,87 @@
+* {
+    text-align: center;
+    margin: auto 0;
+    font-family:'Courier New', Courier, monospace
+}
+h1{
+    margin-bottom: 15px;
+}
+.canvas{
+    margin: 0 auto;
+    background: black;
+    width: 50%;
+    height: 100vh;
+    color: wheat;
+}
+/* Basic form styling */
+form {
+    max-width: 400px;
+    margin: 0 auto; /* Centers the form */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    color: black;
+}
+
+/* Style for form elements */
+form p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], textarea {
+    width: 95%;
+    padding: 8px;
+    margin: 4px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(45deg, green, yellow);;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(45deg, yellow, green);
+}
+
+/* Input history styling */
+.history {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.history ul {
+    list-style-type:circle;
+    padding: 0;  
+}
+
+.history li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.history li:last-child {
+    border-bottom: none;
+}
+
