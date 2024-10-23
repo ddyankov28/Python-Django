@@ -6,7 +6,7 @@ from datetime import datetime
 import os
 
 
-LOG_FILE_PATH = Path(settings.BASE_DIR) / 'ex02' / 'logs.txt'
+LOG_FILE_PATH = Path(settings.BASE_DIR)/'ex02'/'logs.txt'
 
 def forms(request): 
     history = []
@@ -18,7 +18,7 @@ def forms(request):
         form = InputForm(request.POST)
         if form.is_valid():
             input_text = form.cleaned_data['input_text']
-            timestamp = datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S,%Z')
+            timestamp = datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S')
             with open(LOG_FILE_PATH, 'a') as log_file:
                 log_file.write(f"{timestamp} - {input_text}\n")
             history.append(f"{timestamp} - {input_text}")

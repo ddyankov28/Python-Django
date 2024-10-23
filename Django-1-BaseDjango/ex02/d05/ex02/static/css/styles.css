@@ -1,7 +1,7 @@
 * {
     text-align: center;
     margin: auto 0;
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace;
 }
 h1{
     margin-bottom: 15px;
@@ -10,25 +10,18 @@ h1{
     margin: 0 auto;
     background: black;
     width: 50%;
-    height: 100vh;
+    height: 100%;
     color: wheat;
 }
-/* Basic form styling */
+
 form {
     max-width: 400px;
-    margin: 0 auto; /* Centers the form */
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
     margin-bottom: 15px;
-    color: black;
 }
 
-/* Style for form elements */
-form p {
-    margin-bottom: 15px;
-}
 
 label {
     display: block;
@@ -45,15 +38,13 @@ input[type="text"], textarea {
     font-size: 14px;
 }
 
-/* Submit button styling */
 button[type="submit"] {
     width: 100%;
-    background: linear-gradient(45deg, green, yellow);;
-    color: white;
+    font-weight: bolder;
+    background: linear-gradient(45deg, green, yellow);
     padding: 10px;
-    border: none;
+    cursor:pointer;
     border-radius: 4px;
-    cursor: pointer;
     font-size: 16px;
 }
 
@@ -61,27 +52,6 @@ button[type="submit"]:hover {
     background: linear-gradient(45deg, yellow, green);
 }
 
-/* Input history styling */
-.history {
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    border-radius: 4px;
+li{
+    list-style: none;
 }
-
-.history ul {
-    list-style-type:circle;
-    padding: 0;  
-}
-
-.history li {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-}
-
-.history li:last-child {
-    border-bottom: none;
-}
-

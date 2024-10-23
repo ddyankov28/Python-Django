@@ -10,17 +10,17 @@
         <h1>Input History Form</h1>
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit</button>
+            {{ form }}
+            <button type="submit">SUBMIT</button>
         </form>
+    </div>
         <h2>Input History</h2>
         <ul>
             {% for entry in history %}
                 <li>{{ entry }}</li>
             {% empty %}
-                <li>No input history yet.</li>
+                <p>No input history yet</p>
             {% endfor %}
         </ul>
-    </div>
 </body>
 </html>
