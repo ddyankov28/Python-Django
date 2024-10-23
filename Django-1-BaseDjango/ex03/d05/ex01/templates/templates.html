@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Ex01: Template engine.{% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+{% endblock style%}
+{% block content %}
+<header>
+    <h1>Understanding Django’s Default Template Engine</h1>
+    <p>Django’s default template engine allows for a clean separation of the presentation layer (HTML) from backend logic. It supports various template tags, filters, and control structures for dynamically generating content.</p>
+</header>
+
+<section>
+    <h2>Template Blocks</h2>
+    <p>Django employs a block system for template inheritance. Blocks act as placeholder sections in a parent template that can be overridden by child templates. This promotes code reuse and adheres to the DRY (Don't Repeat Yourself) principle.</p>
+    <p>For example, a base template might define sections for the title, header, and content. Child templates can extend this base template and customize the content within these defined blocks.</p>
+    <p><strong>Example Structure:</strong> The base template can include:</p>
+    <ul>
+        <li><strong>Title Block:</strong> Placeholder for page title.</li>
+        <li><strong>Header Block:</strong> Placeholder for header content.</li>
+        <li><strong>Content Block:</strong> Placeholder for the main content.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Loops</h2>
+    <p>Django supports iterating through a list of items using a loop. This is useful for displaying collections such as blog posts or products. Within the loop, you can access each item to generate repeated elements dynamically.</p>
+    <p><strong>Example Structure:</strong> To loop through a list, you might use a structure like:</p>
+    <pre><code>
+    &lt;ul&gt;
+        for each item in item_list:
+            &lt;li&gt;{{ item }}&lt;/li&gt;
+    &lt;/ul&gt;
+    </code></pre>
+</section>
+
+<section>
+    <h2>If Control Structures</h2>
+    <p>Django provides conditional logic capabilities using if statements in templates. This allows you to control what is displayed based on conditions, such as whether a user is logged in.</p>
+    <p><strong>Example Structure:</strong> To display a message based on user authentication, you might structure it like this:</p>
+    <pre><code>
+    if user is authenticated:
+        &lt;p&gt;Welcome, {{ user.username }}!&lt;/p&gt;
+    else:
+        &lt;p&gt;Please log in.&lt;/p&gt;
+    </code></pre>
+</section>
+
+<section>
+    <h2>Displaying Context Variables</h2>
+    <p>Context variables are passed from views to templates, allowing dynamic content rendering. You can reference these variables to display their values directly in the HTML.</p>
+    <p><strong>Example Structure:</strong> To display a greeting message and user information, you might use a structure like:</p>
+    <pre><code>
+    &lt;h1&gt;{{ greeting }}&lt;/h1&gt;
+    &lt;p&gt;Current user: {{ user.username }}&lt;/p&gt;
+    </code></pre>
+</section>
+
+
+{% endblock content %}

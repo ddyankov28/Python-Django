@@ -1,0 +1,15 @@
+*{
+    color: yellow;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    height: 40px;
+    width: 80px;
+    text-align: center;
+}
+th {
+    background-color: lightgrey;
+}

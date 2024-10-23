@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input History</title>
+    <link rel="stylesheet"  href="{% static "css/styles.css" %}">
+</head>
+<body>
+    <div class="canvas">
+        <h1>Input History Form</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+        <h2>Input History</h2>
+        <ul>
+            {% for entry in history %}
+                <li>{{ entry }}</li>
+            {% empty %}
+                <p>No input history yet</p>
+            {% endfor %}
+        </ul>
+</body>
+</html>
